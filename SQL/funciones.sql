@@ -26,7 +26,7 @@ BEGIN
     SET v_total = v_subtotal * 1.19;
     
     RETURN v_total;
-END //
+END;
 
 -- ----------------------------------------------------------------------------
 -- Función: verificar_disponibilidad
@@ -58,6 +58,4 @@ BEGIN
     ELSE
         RETURN 1; -- Disponible
     END IF;
-END //
-
-DELIMITER ;
+END;

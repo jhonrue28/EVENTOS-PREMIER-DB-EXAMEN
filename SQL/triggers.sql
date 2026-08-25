@@ -5,7 +5,6 @@
 
 USE eventos_premier;
 
-DELIMITER //
 
 -- ----------------------------------------------------------------------------
 -- Trigger: actualizar_estado_salon_trigger
@@ -18,7 +17,7 @@ BEGIN
     UPDATE salones 
     SET estado = 'Ocupado'
     WHERE salon_id = NEW.salon_id;
-END //
+END;
 
 -- ----------------------------------------------------------------------------
 -- Trigger: liberar_salon_trigger
@@ -31,7 +30,7 @@ BEGIN
     UPDATE salones 
     SET estado = 'Disponible'
     WHERE salon_id = OLD.salon_id;
-END //
+END;
 
 
 -- Trigger: auditoria_precios_trigger
@@ -53,6 +52,4 @@ BEGIN
             CURRENT_USER()
         );
     END IF;
-END //
-
-DELIMITER ;
+END;
